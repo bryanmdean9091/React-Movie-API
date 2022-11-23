@@ -15,8 +15,8 @@ function App() {
   const [open, setOpen] = useState(false);
   const [error, setError] = useState(null);
   const [close, setClose] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [type, setType] = useState("");
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [type, setType] = useState("");
 
   async function getMovies() {
     setIsLoading(true);
