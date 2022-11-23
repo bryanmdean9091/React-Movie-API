@@ -1,0 +1,56 @@
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+ 
+} 
+
+p {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+ 
+}
+
+.loadingBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  height: 15rem;
+  width: 15rem;
+  background-image: url('./components/media/loading.gif');
+  background-size: cover;
+
+}
+
+.errorBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.errMsg {
+  text-align: center;
+  margin-top: -5rem;
+}
+
+
+
+
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
