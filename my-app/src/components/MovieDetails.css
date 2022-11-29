@@ -22,6 +22,11 @@ body {
     margin-top: 3rem;
 }
 
+ .movieTitle {
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
 button {
     margin-top:1rem;
     width: 60%;
@@ -87,13 +92,16 @@ h5 {
    align-items: center;
 }
 
+
+
 h3 {
     font-size: larger;
     font-weight: bolder;
 }
  .descript {
+    padding: .25rem;
     font-weight: 600;
-    margin-top: -5%;
+    /* margin-top: -5%; */
     font-size: 1rem;
 } 
 .fbc-6 { 
@@ -118,7 +126,9 @@ h4 {
 }
 
 button {
+    color: white;
     margin-top: 1rem;
-    background-color: gray;
+    background-color: black;
     font-weight: 800;
+    width: 25%;
 }

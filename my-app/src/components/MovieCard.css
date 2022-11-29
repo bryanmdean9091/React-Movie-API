@@ -1,35 +1,52 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
 .card-container {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
-  
-  
-  align-content: space-between;
- 
  
 }
 
+
 .movie-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+  position: relative;
+  max-height: 23rem;
+  max-width: 18rem;
   border: 4px;
   display: flex;
   flex-direction: column;
-  /* align-self: center; */
-  /* max-height: 25rem;
-  max-width: 20; */
-  margin-left: 3.75rem;
- 
-  margin-top: 4rem;
-  margin-bottom: 3rem;
+  justify-items: center;
+ margin: 1.5rem;
+ background-color: black;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
 }
 
 .title {
+ 
   text-align: center;
   font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 0;
+  font-size: .65rem;
+  /* margin-top: 2rem; */
+  color: white;
+  margin: 2%;
 }
 
 .poster {
+  /* max-height: 30rem;
+  max-width:22rem ; */
+  height: 92%;
+  width: 100%;
   filter: alpha(opacity=100);
   opacity: 1;
   size: inherit;

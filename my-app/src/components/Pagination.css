@@ -1,0 +1,19 @@
+.pageLink {
+    font-size: 7rem;
+    color: pink;
+}
+
+h1 {
+    color: blue;
+}
+
+.leftArrow, .rightArrow {
+    font-weight: 800;
+    font-size: 3rem;
+    color: white ;
+    text-shadow: 0 0 10px #000;
+}
+
+.pageNo {
+    color: white;
+}

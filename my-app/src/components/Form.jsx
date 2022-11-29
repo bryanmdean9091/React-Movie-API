@@ -1,41 +1,35 @@
-import React, { useEffect, useState } from "react";
-
+import React, {  useState } from "react";
 import PropTypes from "prop-types";
 import "./Form.css";
-// import { getMoviesById } from "../movies";
+
 
 export default function Form(props) {
-  const { setRequestTitle, movies } = props;
+  const { setRequestTitle, setType, setPage, setCount } = props;
 
   const [inputValue, setInputValue] = useState("");
- 
-
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
-
-
-
-  // const handleOptionChange = (e) => {
-  //   setType(e.target.value);
-    
-  // };
-
-  // useEffect(() => {
-  //   console.log("setvalue:", optionValue);
-  // }, [optionValue]);
+  
+  const handleOptionChange = (e) => {
+    setType(e.target.value);
+  };
 
   const onSubmit = (e) => {
+    console.log(e.target.value)
     e.preventDefault();
     setRequestTitle(inputValue);
     setInputValue("");
+    setPage(1);
+    setCount(2);
   };
+
 
   return (
     <>
       <form className="form">
-        <p>Bryan's Second Rate IMDB Ripoff</p>
+        <p>IMDBryan</p>
         <div className="inputContainer">
           <input
             value={inputValue}
@@ -50,30 +44,19 @@ export default function Form(props) {
             <select
               className="media"
               name="media"
-              // onChange={handleOptionChange}
+              onChange={handleOptionChange}
             >
               <option value="">Any</option>
               <option value="movie">Movie</option>
               <option value="series">Series</option>
-              <option value="game">Games</option>
+              <option value="game">Game</option>
             </select>
           </div>
         </div>
-        {/* <div className="pagination">
-          <p>
-            <input
-              className="pageInput"
-              value={currentPage}
-              type="text"
-              onChange={handlePageChange}
-              onClick={(e) => e.target.select()}
-            />
-            {` of ${pageNumbers}`}
-          </p>
-        </div> */}
+       
         <button id="btn" type="button" onClick={onSubmit}>
-              Search
-            </button>
+          Search
+        </button>
       </form>
     </>
   );

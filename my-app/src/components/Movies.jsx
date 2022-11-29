@@ -1,12 +1,14 @@
 import MovieCard from './MovieCard';
+import './Movies.css';
 
-function Movies({ movies, handleClick, handleGetMovieById, setOpen, setClose }) {
+
+function Movies({ movies, handleClick, handleGetMovieById, setOpen, setClose, moviesPerPage }) {
   console.log('our movies: ', movies);
 
   return (
     <>
-      <div className="movies row">
-        {movies?.map((movie) => (
+      <div className="movies">
+        {movies.map((movie) => (
           <MovieCard
             key={movie.imdbID}
             title={movie.Title}
@@ -17,6 +19,7 @@ function Movies({ movies, handleClick, handleGetMovieById, setOpen, setClose }) 
             setOpen={setOpen}
             handleClick={handleClick}
             setClose={setClose}
+            moviesPerPage={moviesPerPage}
           />
         ))}
       </div>

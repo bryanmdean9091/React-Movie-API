@@ -1,11 +1,22 @@
-
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-left: 0;
  
 } 
+
+.pageBox {
+  display: flex;
+  justify-content: center;
+}
 
 p {
   text-align: center;
@@ -34,7 +45,10 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+}
+
+.technicalD {
+  color: white;
 }
 
 .errMsg {

@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import MovieDetails from "./components/MovieDetails";
 import Movies from "./components/Movies";
 import { getMoviesByName, getMovieById } from "./components/Utils";
 import "./App.css";
 import Form from "./components/Form";
-
+import Pagination from "./components/Pagination";
 import Modal from "./components/Modal";
 
 function App() {
@@ -15,13 +14,16 @@ function App() {
   const [open, setOpen] = useState(false);
   const [error, setError] = useState(null);
   const [close, setClose] = useState(false);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [type, setType] = useState("");
+  // const [currentPage, setcurrentPage] = useState(1);
+  // const [moviesPerPage, setMoviesPerPage] = useState(8);
+  const [page, setPage] = useState(1);
+  let [count, setCount] = useState(2);
+  const [type, setType] = useState("");
 
   async function getMovies() {
     setIsLoading(true);
     try {
-      const res = await getMoviesByName(searchTerm);
+      const res = await getMoviesByName(searchTerm, page, type);
       const { Search } = await res.json();
       console.log(Search);
       if (Search == undefined) {
@@ -37,6 +39,8 @@ function App() {
       setError(err.message);
     }
   }
+
+  console.log(movies);
 
   const handleGetMovieById = async (movieId) => {
     const res = await getMovieById(movieId);
@@ -60,15 +64,35 @@ function App() {
     setOpen(false);
     setClose(false);
   };
+
+
   return (
     <>
       <div className="container">
-      {close != true && (
-        <Form setRequestTitle={setSearchTerm}
-        setOpen={setOpen}
-        setClose={setClose}
-        // setType={setType} 
-        />)}
+        {close != true && (
+          <Form
+            setRequestTitle={setSearchTerm}
+            setOpen={setOpen}
+            setClose={setClose}
+            getMovies={getMovies}
+            type={type}
+            setType={setType}
+            setPage={setPage}
+            setCount={setCount}
+          />
+        )}
+        {close != true && (
+          <div className="pageBox">
+            <Pagination
+              totalMovies={movies.length}
+              setPage={setPage}
+              page={page}
+              getMovies={getMovies}
+              setCount={setCount}
+              count={count}
+            />
+          </div>
+        )}
       </div>
       {open && <Modal movie={movie} handleClose={handleClose} />}
       <div className="movieInfo">
@@ -77,16 +101,18 @@ function App() {
             <div className="loading"></div>
           </div>
         ) : error ? (
-          <h1 className="technicalD">Sorry, Something Went Wrong!{error}</h1>
+          <div className="errorBox">
+          <h1 className="technicalD">Sorry, Something Went Wrong! {error}</h1>
+          </div>
         ) : (
           <section className="moviesContainer">
             {close == false && (
               <Movies
                 setClose={setClose}
                 handleGetMovieById={handleGetMovieById}
-                movies={movies}
                 setSearchTerm={setSearchTerm}
                 setOpen={setOpen}
+                movies={movies}
               />
             )}
           </section>

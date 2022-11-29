@@ -14,6 +14,8 @@ export default function MovieCard({
     setClose(true);
   };
 
+  
+
   return (
     <div className="card-container">
       <div className="movie-card">
@@ -23,10 +25,12 @@ export default function MovieCard({
           alt={title}
           onClick={handleClick}
         />
-        <div className="card-body">
+         <div className="card-body">
           <h3 className="title">{title}</h3>
         </div>
       </div>
+     
+     
     </div>
   );
 }

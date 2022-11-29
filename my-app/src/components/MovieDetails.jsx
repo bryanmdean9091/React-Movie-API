@@ -18,7 +18,7 @@ export default function MovieDetails(props) {
               </div>
               <div className="fbc-2">
                 <div className="title">
-                  <h1>{props.movie.Title}</h1>
+                  <h1 className="movieTitle">{props.movie.Title}</h1>
                 </div>
                 <div className="fbc-3">
                   <h5 className="split">{props.movie.Rated}</h5>
