@@ -28,7 +28,7 @@ export default function Form(props) {
 
   return (
     <>
-      <form className="form">
+      <form className="form" onClick={onSubmit}>
         <p>IMDBryan</p>
         <div className="inputContainer">
           <input
@@ -38,6 +38,7 @@ export default function Form(props) {
             onChange={handleInputChange}
             placeholder="Enter a Movie, Series or Game..."
             autoFocus
+
           />
 
           <div className="typeOf">

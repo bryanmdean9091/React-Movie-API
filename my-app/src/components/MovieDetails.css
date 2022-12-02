@@ -23,7 +23,7 @@ body {
 }
 
  .movieTitle {
-    color: black;
+    color: white;
     margin-bottom: 1.5rem;
 }
 
@@ -97,6 +97,7 @@ h5 {
 h3 {
     font-size: larger;
     font-weight: bolder;
+    color: white;
 }
  .descript {
     padding: .25rem;
